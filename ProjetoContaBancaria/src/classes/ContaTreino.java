@@ -1,26 +1,25 @@
 package classes;
 
-public class Conta {
+public class ContaTreino {
+	// atributos
 	private int numero;
 	private String cliente;
 	private double saldo;
 	private double limite;
-	public static int totalContas;
+	public static int totalcontas;
 
 	// construtor
-	public Conta(int numero, String cliente, double saldo, double limite) {
+	public ContaTreino(int numero, String cliente, double saldo, double limite) {
 		super();
 		this.numero = numero;
 		this.cliente = cliente;
 		this.saldo = saldo;
 		this.limite = limite;
-		totalContas++;// incremento mais 1;
-
+		totalcontas++; //incremento mais 1
 	}
 
-//métodos
-// saca dinheiro da conta
-	public boolean sacaGrana(int quantidade) {// passagem de valor
+	// metodo: saca dinheiro da conta
+	public boolean sacaDinheiro(int quantidade) { // passagem de valor
 		if ((this.saldo + this.limite) < quantidade) {
 			return false;
 		} else {
@@ -28,30 +27,39 @@ public class Conta {
 			return true;
 
 		}
+
 	}
 
-//deposita dinheiro na conta 
+	// metodo: deposita dinheiro na conta
 	public void depositaGrana(int quantidade) {
 		this.saldo += quantidade;
 	}
 
-//transfere dinheiro de uma conta para outra
-	public boolean transfereGrana(Conta destino, int quantidade) {
-		if (this.sacaGrana(quantidade)) {
+	// metodo: transfere dinheiro de uma conta para outra
+	public boolean transfereDinheiro(Conta destino, int quantidade) {
+		if (this.sacaDinheiro(quantidade)) {
 			destino.depositaGrana(quantidade);
 			return true;
-
 		} else {
 			return false;
-		}
+		}		
+		
 	}
 
-//mostrar saldo
+	// metodo: mostrar saldo
 	public String mostraSaldo() {
-		return "Número da Conta: " + this.numero + "\nNome: " + this.cliente + "\nSaldo: " + this.saldo;
+		return "Número da conta: " + this.numero + "\nNome: " + this.cliente + "\nSaldo" + this.saldo;
+
 	}
 
-//getters and setters (/source/Generate/Getters e Setters)
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
 	public double getLimite() {
 		return limite;
 	}
@@ -68,8 +76,8 @@ public class Conta {
 		return cliente;
 	}
 
-	public double getSaldo() {
-		return saldo;
+	public static int getTotalcontas() {
+		return totalcontas;
 	}
 
 }

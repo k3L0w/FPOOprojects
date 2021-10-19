@@ -1,7 +1,7 @@
 package classes;
 
 public class Cliente {
-	//construtores
+	//atributos
 	private String nome, cpf, endereco, telefone;
 	
 	//construtor
