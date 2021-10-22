@@ -1,0 +1,17 @@
+	// atributos
+public String nome;
+public int idade;
+public float altura;
+
+//construtor 
+public Pessoa(String nome, int idade, float altura) {
+
+	this.nome = nome;
+	this.idade = idade;
+	this.altura = altura;
+}
+
+// métodos 
+public String mostrarDados() {
+	return "Nome: " + this.nome +"\nIdade: " + this.idade +"\nAltura: " + this.altura; 
+}

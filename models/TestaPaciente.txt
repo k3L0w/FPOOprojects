@@ -1,0 +1,11 @@
+		String nome,genero;
+		float altura;
+		nome = JOptionPane.showInputDialog("Entre com o nome do paciente");
+		genero = JOptionPane.showInputDialog("Entre com o genero do paciente").toUpperCase();
+		altura =Float.parseFloat(
+				JOptionPane.showInputDialog("Entre com a altura do paciente"));
+		//objeto
+		Paciente paciente = new Paciente(nome, genero, altura);
+		JOptionPane.showMessageDialog(null,
+				"Dados:\n" + paciente.mostrarDadosEntrada()+
+				"\nPeso Ideal: "+paciente.calculaPesoIdeal());

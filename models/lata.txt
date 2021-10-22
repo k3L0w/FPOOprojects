@@ -1,0 +1,11 @@
+public float raio, altura,volume;
+//construtor
+public Lata(float raio, float altura) {
+
+	this.raio = raio;
+	this.altura = altura;
+}
+//metodo
+public float calculaVolume() {
+	return volume = (float) (Math.PI * Math.pow(raio, 2) * altura);
+}

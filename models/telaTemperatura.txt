@@ -1,0 +1,24 @@
+public JLabel jlCelsius;
+	public TelaTemperatura(String title) {
+		super(title);
+		setSize(400, 200);
+		setLayout(null);
+		iniciarComponentes();
+		criarEventos();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	private void iniciarComponentes() {
+		//criar objeto
+		jlCelsius = new JLabel("Entre com a temperatura em graus Celsius");
+		
+		// adicionar o componente a tela 
+		add(jlCelsius);
+		
+		//dimensionar o componente 
+		jlCelsius.setBounds(20, 20, 300, 20);
+		
+	}
+	private void criarEventos() {
+		// TODO Auto-generated method stub
+		
+	}

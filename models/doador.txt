@@ -1,0 +1,57 @@
+public String nome,genero;
+	public float peso;
+	public int idade;
+
+	//Construtor
+	public Doador(String nome, String genero, float peso, int idade) {
+		super();
+		this.nome = nome;
+		this.genero = genero;
+		this.peso = peso;
+		this.idade = idade;
+	}
+
+	//metodos
+	//verificar se pode doar ou não sangue
+	public boolean verificarDoarSangue() {
+		if (this.peso > 50 && this.idade >= 18 && this.idade <= 69) {
+			return true;
+		}	
+		return false;
+	}
+	//mostra aquantidade de sangue doada por genero	
+	public String mostrarQuantidadeSangue() {
+		if (this.genero.equals("MASCULINO")) {
+			return "Doar 700 gramas";
+		}else {
+			return "Doar 400 gramas";
+		}
+	}
+	//mostra os dados dos Doador
+	public String mostrarDadosEntrada() {
+		return "Nome: " + this.nome +
+				"\nIdade: "+this.idade +
+				"\nPeso: "+ this.peso +
+				"\nGenero: "+this.genero;
+	}
+*************************************************************************************************************
+public TelaDoador2(String title) throws HeadlessException {
+		super(title);
+		setSize(400, 400);
+		setLayout(null);
+		iniciarComponentes();
+		criarEventos();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void iniciarComponentes() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void criarEventos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	

@@ -1,0 +1,26 @@
+public String nome,statusAluno;
+public float nota1,nota2,media;
+
+//construtor
+public Aluno(String nome, float nota1, float nota2) {
+	super();
+	this.nome = nome;
+	this.nota1 = nota1;
+	this.nota2 = nota2;
+}
+//metodos 
+public void calcularMedia() {
+	this.media = (this.nota1 + this.nota2)/2;
+}
+public void verificarStatus() {
+	if (this.media >= 5) {
+		this.statusAluno = "Aprovado";
+	} else {
+		this.statusAluno = "Reprovado";
+	}
+}
+//mostrar dados do aluno
+public String mostrarDadosAluno() {
+	return "Nome: " + this.nome +"\nMédia: "+
+this.media +"\nAluno está "+ this.statusAluno;
+}

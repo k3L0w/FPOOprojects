@@ -1,0 +1,38 @@
+Object[] menu = {"Cadastrar","Reprovado","Aprovado","Sair"};
+		String opcao;
+		String nome;
+		Aluno aluno = null;
+		float nota1, nota2;
+		do {
+			opcao = (String) JOptionPane.showInputDialog(null, "Escolha"
+					+ " uma das opções", "Escola",
+					JOptionPane.INFORMATION_MESSAGE,
+					null, menu, "Cadastrar");
+			switch (opcao) {
+			case "Cadastrar":
+				nome = JOptionPane.showInputDialog("Entrar com o nome");
+				nota1 = Float.parseFloat(JOptionPane.showInputDialog("Entrar com a primeira nota do aluno"));
+				nota2 = Float.parseFloat(JOptionPane.showInputDialog("Entrar com a segunda nota do aluno"));
+				aluno = new Aluno(nome, nota1, nota2);//objeto
+				aluno.calcularMedia();
+				aluno.verificarStatus();
+				break;
+			case "Reprovado":
+				if (aluno.statusAluno.equalsIgnoreCase("Reprovado")) {
+					
+					System.out.println(aluno.mostrarDadosAluno());
+				}
+				break;
+			case "Aprovado":
+if (aluno.statusAluno.equalsIgnoreCase("Aprovado")) {
+					
+					System.out.println(aluno.mostrarDadosAluno());
+				}
+				break;
+
+			default:break;
+			}
+			
+			
+			
+		} while (!opcao.equals("Sair"));

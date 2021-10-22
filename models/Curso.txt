@@ -1,0 +1,37 @@
+public String codigo, tipoPagamento;
+public float valor;
+
+//construtor
+public Curso(String codigo, String tipoPagamento) {
+	super();
+	this.codigo = codigo;
+	this.tipoPagamento = tipoPagamento;
+}
+
+
+
+
+//métodos
+// calcula o valor do curso caso o aluno pague a vista
+public float calcularValorCurso() {
+	if (this.codigo.equals("IGEP")) {
+		this.valor = (float) 2400.00;
+		if (this.tipoPagamento.equalsIgnoreCase("Vista")) {
+			//this.valor = (float) (this.valor - this.valor *0.10);
+			this.valor -=  (this.valor * 0.10);//contração da linha de cima 
+		}	
+	} else {
+		if (this.codigo.equals("IGL")) {
+			this.valor = (float) 1614.00;
+			if (this.tipoPagamento.equalsIgnoreCase("Vista")) {
+				this.valor -=  this.valor * 0.10;
+			}
+		} else {
+			this.valor = (float) 1200.00;
+			if (this.tipoPagamento.equalsIgnoreCase("Vista")) {
+				this.valor -=  this.valor * 0.10;
+			}
+		}
+	}
+	return this.valor;
+}

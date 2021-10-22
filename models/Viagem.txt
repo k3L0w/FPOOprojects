@@ -1,0 +1,17 @@
+public float velocidade, tempo,distancia,litrosUsados ;
+public int consumo = 12;
+
+//construtor
+public Viagem(float velocidade, float tempo) {
+	super();
+	this.velocidade = velocidade;
+	this.tempo = tempo;
+}
+
+// metodos 
+public float calculoDistancia() {
+	return  this.distancia = this.velocidade * this.tempo;
+}
+public float calculoLitrosUsados() {
+	return this.litrosUsados = this.distancia/this.consumo;
+}

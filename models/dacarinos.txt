@@ -1,0 +1,19 @@
+public String nome1, nome2, genero1, genero2;
+
+//construtor
+public Dancarinos(String nome1, String nome2, String genero1, String genero2) {
+	super();
+	this.nome1 = nome1;
+	this.nome2 = nome2;
+	this.genero1 = genero1;
+	this.genero2 = genero2;
+}
+//metodos
+//verifica se os dançarinos tem o mesmo gênero
+public boolean verificarGenero() {
+	if (this.genero1.equals("MASCULINO") && this.genero2.equals("MASCULINO")
+			|| this.genero1.equals("FEMININO") && this.genero2.equals("FEMININO")) {
+		return false;
+	}
+	return true;
+}
