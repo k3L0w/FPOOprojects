@@ -8,23 +8,28 @@ public class TestaConta {
 
 	public static void main(String[] args) {
 		// String nome;
+		String nome, cpf, endereco, telefone;
 		int numero;
 		double saldo,limite;
-				
+		
 		
 		//Conta[] contas;
 		Conta[] contas = new Conta [2];
 		for (int i = 0; i < contas.length; i++) {
 			
-			String nome = JOptionPane.showInputDialog("Entre com o nome do titular da conta");
+			nome = JOptionPane.showInputDialog("Entre com o nome do titular da conta");
+			cpf = JOptionPane.showInputDialog("Entre com o cpf do titular da conta");
+			endereco = JOptionPane.showInputDialog("Entre com o endereço do titular da conta");
+			telefone = JOptionPane.showInputDialog("Entre com o telefone do titular da conta");
 			numero = Integer.parseInt(JOptionPane.showInputDialog("Entre com"
 					+ " o número da conta"));
 			saldo = Double.parseDouble(JOptionPane.showInputDialog("Entre com"
 					+ " o saldo inicial da conta"));
 			limite = Double.parseDouble(JOptionPane.showInputDialog("Entre com"
 					+ " o limite da conta"));
+		
 			//objeto
-		contas[i] = new Conta(numero, nome, saldo, limite);
+			contas[i] = new Conta(nome, nome, nome, nome, numero, saldo, limite);
 			
 		}
 		

@@ -1,8 +1,8 @@
 package classes;
 
 public class Cliente {
-	//atributos
-	private String nome, cpf, endereco, telefone;
+	//construtores
+	protect String nome, cpf, endereco, telefone;
 	
 	//construtor
 	 Cliente(String nome, String cpf, String endereco, String telefone) {
