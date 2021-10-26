@@ -1,6 +1,7 @@
 package telas;
 
 import java.awt.Color;
+
 import java.awt.Container;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+
+//import com.sun.tools.javac.code.Type.ForAll;
 
 import classes.Carro;
 import paineis.PainelCadastroCarro;
@@ -81,6 +84,11 @@ private Container contentPane;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				for (int i = 0; i < carros.size(); i++) {
+					System.out.println(carros.get(i).mostrarDados());
+				}
+			
+				
 				System.exit(0);
 				
 			}
