@@ -5,12 +5,15 @@ import java.awt.Container;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import classes.Carro;
 import paineis.PainelCadastroCarro;
 
 public class TelaTransportadora extends JFrame {
@@ -20,6 +23,9 @@ private JMenuBar jmBarra;
 private JMenu jmArquivo, jmCadastro, jmCaminhao;
 //cria item do menu
 private JMenuItem jmiSair, jmiCarro, jmiOnibus, jmiBau, jmiCarreta, jmiBasculante;
+//matriz dinamica (1ª ação.. da matriz)
+private List<Carro> carros = new ArrayList<>(); //matriz dinamica //ArrayList (java.util...) //endereço da matriz // carros (endereço do objeto da classe carro)
+
 //cria painel
 private Container contentPane;
 
@@ -83,7 +89,7 @@ private Container contentPane;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PainelCadastroCarro carro = new PainelCadastroCarro();
+				PainelCadastroCarro carro = new PainelCadastroCarro(carros); //2º passo da matriz...
 				contentPane.removeAll();
 				contentPane.add(carro);//painel adicionado na tela(Jframe)
 				contentPane.validate();
