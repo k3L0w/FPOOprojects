@@ -18,14 +18,15 @@ import javax.swing.JMenuItem;
 
 import classes.Carro;
 import paineis.PainelCadastroCarro;
+import paineis.PainelMostrar;
 
 public class TelaTransportadora extends JFrame {
 //passo: A
 private JMenuBar jmBarra;
 //cria menu //passo: b
-private JMenu jmArquivo, jmCadastro, jmCaminhao;
+private JMenu jmArquivo, jmCadastro, jmExibir, jmCaminhao;
 //cria item do menu
-private JMenuItem jmiSair, jmiCarro, jmiOnibus, jmiBau, jmiCarreta, jmiBasculante;
+private JMenuItem jmiSair, jmiCarro, jmiMostrarDados, jmiOnibus, jmiBau, jmiCarreta, jmiBasculante;
 //matriz dinamica (1ª ação.. da matriz)
 private List<Carro> carros = new ArrayList<>(); //matriz dinamica //ArrayList (java.util...) //endereço da matriz // carros (endereço do objeto da classe carro)
 
@@ -53,6 +54,7 @@ private Container contentPane;
 		//passo: b		
 		jmArquivo = new JMenu("Arquivo");
 		jmCadastro = new JMenu("Cadastro");
+		jmExibir = new JMenu("Exibir");
 		jmCaminhao = new JMenu("Caminhao");
 		jmiSair = new JMenuItem("Sair");
 		jmiCarro = new JMenuItem("Carro");
@@ -60,12 +62,14 @@ private Container contentPane;
 		jmiBau = new JMenuItem("Bau");
 		jmiBasculante = new JMenuItem("Basculante");
 		jmiCarreta = new JMenuItem("Carreta");
-		
+		jmiMostrarDados = new JMenuItem("Mostrar Dados");
 		
 		//adicionar
 		jmBarra.add(jmArquivo);
 		jmBarra.add(jmCadastro);
+		jmBarra.add(jmExibir);
 		jmArquivo.add(jmiSair);
+		jmExibir.add(jmiMostrarDados);
 		jmCadastro.add(jmiCarro);
 		jmCadastro.add(jmiOnibus);
 		jmCadastro.add(jmCaminhao);
@@ -103,6 +107,20 @@ private Container contentPane;
 				contentPane.validate();
 			}
 		});
+		//evento adiciona o painel de mostrar dados 
+		jmiMostrarDados.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Objeto do painel mostrar dados
+				PainelMostrar mostrar = new PainelMostrar(carros);
+				contentPane.removeAll();
+				contentPane.add(mostrar);
+				contentPane.validate();
+				
+			}
+		});
+		
 		
 		
 	}

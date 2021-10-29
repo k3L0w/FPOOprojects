@@ -20,7 +20,7 @@ public class Carro extends Veiculos {
 				"\ncor: :" + this.cor +
 				"\nModelo: " + this.modelo +
 				"\nAno de Fabricação: " + this.anoFabricacao + 
-				"\nAno do Modelo: " + this.anoModelo;
+				"\nAno do Modelo: " + this.anoModelo + "\n***************";
 		}
 		
 }
