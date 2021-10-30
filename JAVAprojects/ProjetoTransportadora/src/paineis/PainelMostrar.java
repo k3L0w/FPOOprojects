@@ -10,6 +10,7 @@ import javax.print.attribute.standard.OrientationRequested;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import classes.Carro;
@@ -18,7 +19,7 @@ public class PainelMostrar extends JPanel { //em Source / Generate construtor...
 private JButton jbCarro, jbOnibus, jbCaminhao;
 private JRadioButton jrbBau, jrbCarreta, jrbBasculante;
 private JTextArea jtaMostrar; 
-private Scrollbar scrollbar;
+private JScrollPane jsMostrar;
 
 private List<Carro> carros;
 
@@ -46,7 +47,7 @@ private void iniciarComponentes() {
 	jrbCarreta = new JRadioButton("Carreta");
 	jrbCarreta.setOpaque(false);
 	jtaMostrar = new JTextArea("Mostra Dados");
-	scrollbar = new Scrollbar();
+	jsMostrar = new JScrollPane(jtaMostrar);// JtextArea dentro do scholl
 	
 	
 	//adicionar
@@ -56,7 +57,7 @@ private void iniciarComponentes() {
 	add(jrbBasculante);
 	add(jrbBau);
 	add(jrbCarreta);
-	add(jtaMostrar);
+	add(jsMostrar);
 	
 	//dimensionar
 	jbCarro.setBounds(20, 40, 100, 20);
@@ -65,7 +66,7 @@ private void iniciarComponentes() {
 	jrbBau.setBounds(200, 80, 100, 20);
 	jrbCarreta.setBounds(200, 100, 100, 20);
 	jrbBasculante.setBounds(200, 120, 100, 20);
-	jtaMostrar.setBounds(30, 140, 330, 230);
+	jsMostrar.setBounds(30, 150, 330, 180);
 	
 		
 
