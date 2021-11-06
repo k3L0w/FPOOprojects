@@ -17,7 +17,9 @@ import javax.swing.JMenuItem;
 //import com.sun.tools.javac.code.Type.ForAll;
 
 import classes.Carro;
+import classes.Veiculos;
 import paineis.PainelCadastroCarro;
+import paineis.PainelCadastroOnibus;
 import paineis.PainelMostrar;
 
 public class TelaTransportadora extends JFrame {
@@ -28,7 +30,7 @@ private JMenu jmArquivo, jmCadastro, jmExibir, jmCaminhao;
 //cria item do menu
 private JMenuItem jmiSair, jmiCarro, jmiMostrarDados, jmiOnibus, jmiBau, jmiCarreta, jmiBasculante;
 //matriz dinamica (1ª ação.. da matriz)
-private List<Carro> carros = new ArrayList<>(); //matriz dinamica //ArrayList (java.util...) //endereço da matriz // carros (endereço do objeto da classe carro)
+private List<Veiculos> veiculos = new ArrayList<>(); //matriz dinamica //ArrayList (java.util...) //endereço da matriz // carros (endereço do objeto da classe carro)
 
 //cria painel
 private Container contentPane;
@@ -76,10 +78,7 @@ private Container contentPane;
 		jmCaminhao.add(jmiBau);
 		jmCaminhao.add(jmiCarreta);
 		jmCaminhao.add(jmiBasculante);
-		
 			
-		
-		
 	}
 
 	private void criarEventos() {
@@ -88,8 +87,8 @@ private Container contentPane;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (int i = 0; i < carros.size(); i++) {
-					System.out.println(carros.get(i).mostrarDados());
+				for (int i = 0; i < veiculos.size(); i++) {
+					System.out.println(veiculos.get(i).mostrarDados());
 				}
 			
 				
@@ -101,19 +100,33 @@ private Container contentPane;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				PainelCadastroCarro carro = new PainelCadastroCarro(carros); //2º passo da matriz...
+				PainelCadastroCarro carro = new PainelCadastroCarro(veiculos); //2º passo da matriz...
 				contentPane.removeAll();
 				contentPane.add(carro);//painel adicionado na tela(Jframe)
 				contentPane.validate();
 			}
 		});
+		//criar evento do painel cadastro Onibus
+		jmiOnibus.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PainelCadastroOnibus onibus = new PainelCadastroOnibus(veiculos); //2º passo da matriz...
+				contentPane.removeAll();
+				contentPane.add(onibus);//painel adicionado na tela(Jframe)
+				contentPane.validate();
+			}
+		});
+				
+		
+		
 		//evento adiciona o painel de mostrar dados 
 		jmiMostrarDados.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// Objeto do painel mostrar dados
-				PainelMostrar mostrar = new PainelMostrar(carros);
+				PainelMostrar mostrar = new PainelMostrar(veiculos, veiculos);
 				contentPane.removeAll();
 				contentPane.add(mostrar);
 				contentPane.validate();

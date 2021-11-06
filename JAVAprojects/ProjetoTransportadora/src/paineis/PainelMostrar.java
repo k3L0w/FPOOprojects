@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import classes.Carro;
+import classes.Veiculos;
 
 public class PainelMostrar extends JPanel { //em Source / Generate construtor...
 private JButton jbCarro, jbOnibus, jbCaminhao;
@@ -21,16 +22,16 @@ private JRadioButton jrbBau, jrbCarreta, jrbBasculante;
 private JTextArea jtaMostrar; 
 private JScrollPane jsMostrar;
 
-private List<Carro> carros;
+private List<Veiculos> veiculos;
 
 
-	public PainelMostrar(List<Carro> carros) {
+	public PainelMostrar(List<Veiculos> veiculos2, List<Veiculos> veiculos) {
 		super();
 		// super();
 		setSize(400, 400);
 		setLayout(null);
 		setBackground(Color.cyan);
-		this.carros = carros;
+		this.veiculos = veiculos;
 		iniciarComponentes(); //2. botão direito do mouse: inicia componentes..
 		criarEventos(); //1. botão direito do mouse: cria eventos..
 	}
@@ -81,8 +82,8 @@ private void criarEventos() {
 		public void actionPerformed(ActionEvent e) {
 			jtaMostrar.setText("");//apagando a área de texto
 			jtaMostrar.setText("************MOSTRAR DADOS************");//apagando a área de texto
-			for (int i = 0; i < carros.size(); i++) { //retorna o tamanho da matriz
-				jtaMostrar.append(carros.get(i).mostrarDados());
+			for (int i = 0; i < veiculos.size(); i++) { //retorna o tamanho da matriz
+				jtaMostrar.append(veiculos.get(i).mostrarDados());
 				
 			}
 			

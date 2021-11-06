@@ -15,6 +15,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import classes.Carro;
+import classes.Veiculos;
 
 public class PainelCadastroCarro extends JPanel {
 private JLabel jlCarro, jlFabricante, jlAnoModelo, jlAnoFabricacao, jlModelo, jlPlaca, jlNumeroLugares, jlChassi, jlCor, jlCombustivel;
@@ -22,17 +23,21 @@ private JTextField jtfFabricante, jtfAnoModelo, jtfAnofabricacao, jtfModelo,jtfP
 private JRadioButton jrbGrande,jrbMedio,jrbPequeno, jrbGasolina, jrbGasolinaAlcool, jrbAlcool, jrbDiesel;
 private ButtonGroup bgNumeroLugares, bgCombustivel;
 private JButton jbCadastrar;
-private List<Carro> carros; //carros é atributo
+private List<Veiculos> veiculos; //carros é atributo
 
-	public PainelCadastroCarro(List<Carro> carros) {
+	public PainelCadastroCarro(List<Veiculos> veiculos) {
 		super();
 		setSize(400, 400);
 		setLayout(null);
 		setBackground(Color.cyan);
-		this.carros = carros;
+		this.veiculos = veiculos;
 		iniciarComponentes(); //2. botão direito do mouse: inicia componentes..
 		criarEventos(); //1. botão direito do mouse: cria eventos..
 		
+	}
+
+	public void PainelCadastroCarro(List<Veiculos> veiculos2) {
+		// TODO Auto-generated constructor stub
 	}
 
 	private void iniciarComponentes() {
@@ -192,7 +197,14 @@ private List<Carro> carros; //carros é atributo
 				if (jrbDiesel.isSelected()) tipoComustivel = "Diesel";
 				
 				//adicionando na matriz dinâmica o endereço do objeto do carro.
-				carros.add(new Carro(placa, cor, fabricante, numeroChassis, cor, tipoVeiculo, modelo, anoFabricacao, anoModelo, numeroLugares));
+				veiculos.add(new Carro(placa, cor, fabricante, numeroChassis, cor, tipoVeiculo, modelo, anoFabricacao, anoModelo, numeroLugares));
+				jtfAnofabricacao.setText("");
+				jtfAnoModelo.setText("");
+				jtfChassi.setText("");
+				jtfCor.setText("");
+				jtfFabricante.setText("");
+				jtfPlaca.setText("");
+				jtfModelo.setText("");
 								
 				
 				
