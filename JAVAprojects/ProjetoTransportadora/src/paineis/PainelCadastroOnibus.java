@@ -173,7 +173,7 @@ jbCadastrar.addActionListener(new ActionListener() {
 						!jtfCor.getText().isEmpty()) {
 				//---------------------------------------
 				
-					//declaração de variáveis
+				//declaração de variáveis
 				String tipoVeiculo,fabricante,anoModelo,anoFabricacao,modelo,placa,numeroChassis,cor,tipoComustivel;
 				int numeroPoltronas = 0;
 				//entradas

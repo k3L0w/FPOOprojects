@@ -1,6 +1,8 @@
 package classes;
 
-public class Veiculos {
+import java.io.Serializable;
+
+public class Veiculos implements Serializable{//ao guardar arquivos, serializar...
 	protected String placa;
 	protected String tipoCombustivel;
 	protected String fabricante;

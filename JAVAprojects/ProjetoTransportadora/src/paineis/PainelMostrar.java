@@ -37,7 +37,7 @@ private List<Veiculos> veiculos;
 	}
 
 private void iniciarComponentes() {
-		// objeto
+	// objeto
 	jbCarro = new JButton("Carro");
 	jbCaminhao = new JButton("Caminhão");
 	jbOnibus = new JButton("Ônibus");
@@ -68,11 +68,10 @@ private void iniciarComponentes() {
 	jrbCarreta.setBounds(200, 100, 100, 20);
 	jrbBasculante.setBounds(200, 120, 100, 20);
 	jsMostrar.setBounds(30, 150, 330, 180);
-	
-		
-
-		
+			
 	}
+
+
 
 private void criarEventos() {
 	// evento do botao carro
@@ -82,17 +81,38 @@ private void criarEventos() {
 		public void actionPerformed(ActionEvent e) {
 			jtaMostrar.setText("");//apagando a área de texto
 			jtaMostrar.setText("************MOSTRAR DADOS************");//apagando a área de texto
-			for (int i = 0; i < veiculos.size(); i++) { //retorna o tamanho da matriz
-				jtaMostrar.append(veiculos.get(i).mostrarDados());
+			for (Veiculos veiculo : veiculos) { //azul atributo; marrom variável.
+				if (veiculo instanceof Carro) {
+					jtaMostrar.append(veiculo.mostrarDados());
+				}
 				
 			}
 			
 			
 		}
 	});
+	jbOnibus.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		jtaMostrar.setText("");//apagando a área de texto
+		jtaMostrar.setText("************MOSTRAR DADOS************");//apagando a área de texto
+		for (Veiculos veiculo : veiculos) { //azul atributo; marrom variável.
+			if (veiculo instanceof Onibus) {
+				jtaMostrar.append(veiculo.mostrarDados());
+
+		
+			}
+		}
+		}
+			
+		});
 	
 }
+}
+		
+		
+		
 	
 	
 
-}

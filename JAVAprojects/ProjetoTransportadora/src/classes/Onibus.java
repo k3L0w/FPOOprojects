@@ -22,6 +22,8 @@ public class Onibus extends Veiculos{
 				"\nModelo: " + this.modelo +
 				"\nAno de Fabricação: " + this.anoFabricacao + 
 				"\nAno do Modelo: " + this.anoModelo;
+				
+
 		}
 		
 }

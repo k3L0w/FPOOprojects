@@ -13,6 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import arquivo.LerEscreverArquivo;
 
 //import com.sun.tools.javac.code.Type.ForAll;
 
@@ -31,6 +34,7 @@ private JMenu jmArquivo, jmCadastro, jmExibir, jmCaminhao;
 private JMenuItem jmiSair, jmiCarro, jmiMostrarDados, jmiOnibus, jmiBau, jmiCarreta, jmiBasculante;
 //matriz dinamica (1ª ação.. da matriz)
 private List<Veiculos> veiculos = new ArrayList<>(); //matriz dinamica //ArrayList (java.util...) //endereço da matriz // carros (endereço do objeto da classe carro)
+private LerEscreverArquivo arquivo = new LerEscreverArquivo();
 
 //cria painel
 private Container contentPane;
@@ -44,6 +48,7 @@ private Container contentPane;
 		iniciarComponentes(); //2. botão direito do mouse: inicia componentes..
 		criarEventos(); //1. botão direito do mouse: cria eventos..
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //fecha janela
+
 	}
 
 	private void iniciarComponentes() {
@@ -87,11 +92,12 @@ private Container contentPane;
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for (int i = 0; i < veiculos.size(); i++) {
-					System.out.println(veiculos.get(i).mostrarDados());
+				if (!veiculos.isEmpty()) {
+					arquivo.escreverObjeto(veiculos);
+				} else {
+					JOptionPane.showMessageDialog(null, "Lista vazia!");
 				}
-			
-				
+						
 				System.exit(0);
 				
 			}
