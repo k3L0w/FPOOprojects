@@ -18,7 +18,7 @@ public class TestaCliente {
 		
 		//criando o objeto
 		Cliente cliente = new Cliente(nomecliente, nomepet, tipopet, endereco);
-			JOptionPane.showMessageDialog(null, "DADOS DE CADASTRO PET\n" +cliente.mostrarDados(), "\nCADASTRO DE CLIENTES E PETs\n", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imagem/pet.png"));
+			JOptionPane.showMessageDialog(null, "DADOS DE CADASTRO PET\n" +cliente.mostrarDados(), "\nCADASTRO DE CLIENTES E PETs\n", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/search.png"));
 
 	}
 
